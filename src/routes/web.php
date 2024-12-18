@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// 問い合わせフォーム関連
+Route::get('/', [ContactController::class, 'index']);
+Route::post('/confirm', [ContactController::class, 'confirm'])->name('confirm');
+Route::post('/confirm/store', [ContactController::class, 'store'])->name('store');
+Route::get('/thanks', [ContactController::class, 'thanks'])->name('thanks');
+
+// 管理画面関連
+Route::middleware('auth')->group(function () {
+    Route::get('/admin', [AuthController::class, 'index']);
+    Route::post('/admin/search', [AuthController::class, 'search']);
+    Route::get('/admin/delete', [AuthController::class, 'delete']);
 });

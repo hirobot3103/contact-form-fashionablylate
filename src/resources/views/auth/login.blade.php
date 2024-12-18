@@ -13,16 +13,38 @@
   <header class="header">
     <div>
       <p>仮　管理画面：ログイン</p>
+      <ul class="header-nav">
+      @if (Auth::check())
+      <li class="header-nav__item">
+        <a class="header-nav__link" href="/mypage">マイページ</a>
+      </li>
+      <li class="header-nav__item">
+        <form action="/logout" method="post">
+          @csrf
+          <button class="header-nav__button" type="submit">ログアウト</button>
+        </form>
+      </li>
+      @endif
+    </ul>
     </div>
   </header>
   <main class="main">
-    <form action="/login" method="POST">
+  @if ($errors->any())
+        <div>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+    <form action="{{route('login')}}" method="post">
       @csrf
       email:<input type="email" name="email" value="{{ old('email') }}" />
       <br>
       pass:<input type="password" name="password" />
       <br>
-      <button>ログイン</button>
+      <button type="submit">ログイン</button>
     </form>
   </main>
 </body>
