@@ -110,8 +110,9 @@ return [
     |
     */
 
-    'faker_locale' => 'en_US',
-
+    // 'faker_locale' => 'en_US',
+    'faker_locale' => env('APP_FAKER_LOCALE', 'ja_JP'),
+    
     /*
     |--------------------------------------------------------------------------
     | Encryption Key

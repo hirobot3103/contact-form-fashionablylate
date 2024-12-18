@@ -1,26 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>FashionablyLate お問い合わせ入力フォーム</title>
+
+  <link rel="stylesheet" href="{{ asset('css/sanitaize.css') )}}">
+  <link rel="stylesheet" href="{{ asset('css/common.css') )}}">
+  <link rel="stylesheet" href="{{ asset('css/index.css') )}}">
+
 </head>
 <body>
-  <a href="{{route('register')}}">登録</a>
-  <a href="{{route('login')}}">ログイン</a>
-w
-<ul class="header-nav">
-      @if (Auth::check())
-      <li class="header-nav__item">
-        <a class="header-nav__link" href="/mypage">マイページ</a>
-      </li>
-      <li class="header-nav__item">
-        <form action="/logout" method="post">
-          @csrf
-          <button class="header-nav__button" type="submit">ログアウト</button>
-        </form>
-      </li>
-      @endif
-    </ul>
+  <div class="page-wrapper">
+    <header class="page-header">
+      <div class="page-header__title">
+        <h1>FashionablyLate</h1>
+      </div>
+      <div class="page-header__btn">
+      </div>
+    </header>
+    <main class="page-main">
+
+    </main>
+  </div>
 </body>
 </html>
