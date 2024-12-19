@@ -14,9 +14,32 @@
     <div>
       <p>仮　管理画面：登録</p>
     </div>
+    <ul class="header-nav">
+      @if (Auth::check())
+      <li class="header-nav__item">
+        <a class="header-nav__link" href="/mypage">マイページ</a>
+      </li>
+      <li class="header-nav__item">
+        <form action="/logout" method="post">
+          @csrf
+          <button class="header-nav__button">ログアウト</button>
+        </form>
+      </li>
+      @endif
+    </ul>
+
   </header>
   <main class="main">
-    <form action="/register" method="POST">
+  @if ($errors->any())
+        <div>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+    <form action="/register" method="post">
       @csrf
       name:<input type="text" name="name" value="{{ old('name') }}" />
       <br>
@@ -25,7 +48,7 @@
       pass:<input type="password" name="password" />
       <br>
       pass-conf:<input type="password" name="password_confirmation" />
-      <button>登録</button>
+      <button type="submit">登録</button>
     </form>
   </main>
 </body>

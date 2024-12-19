@@ -1,0 +1,228 @@
+body {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: "Inika", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: rgba(139, 121, 105, 1);
+}
+
+.page-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+}
+
+.page-header {
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  border: 1px solid rgba(224, 223, 222, 1);
+}
+
+.page-header__title > span {
+  text-align: center;
+  font-size: 40px;
+  line-height: 100px;
+}
+
+.page-main {
+  width:100%;
+  height:100%;
+}
+
+.page-main__title {
+  text-align: center;
+}
+
+.page-main__title > span {
+  display: inline-block;
+  margin: 50px 0;
+  font-size: 35px;
+}
+
+.page-main__contents {
+  width:930px;
+  margin: 0 auto;
+}
+
+.page-main__form {
+  width:100%;
+}
+
+.page-main__form-input {
+  display: flex;
+  flex-direction: row;
+  width:100%;
+  /* background-color: blueviolet; */
+  margin-bottom: 30px;
+}
+
+.page-main__form-input > label {
+  display: inline-block;
+  width:300px;
+  height:40px;
+  font-size:26px;
+  line-height: 40px;
+  /* background-color: aqua; */
+}
+
+.page-main__form-input > label > span {
+  color: #FF9494;
+}
+
+.page-main__form-input__area {
+  display: flex;
+  justify-content: space-between;
+  width:630px;
+}
+
+.form-input__name {
+  width:290px;
+  height:40px;
+  background-color: #F4F4F4;
+  color: #BEB1A6;
+  border: none;
+  font-size: 18px;
+}
+
+.form-input__name::placeholder,
+.form-input__email::placeholder,
+.form-input__tel::placeholder,
+.form-input__address::placeholder,
+.form-input__building::placeholder,
+.form-input__contact::placeholder {
+  padding-left: 20px;
+  font-size: 14px;
+  color: #BEB1A6;
+}
+
+.page-main__form-input__area--radio {
+  width:630px;
+  font-size:26px;
+  line-height: 40px;
+}
+
+.form-input__gender {
+  display: none;
+}
+
+.gender-label {
+  position: relative;
+  margin-left:35px;
+  margin-right:40px;
+}
+
+.gender-label::before,
+.page-main__form-input__area--radio input[type=radio]:checked + .gender-label::before {
+  position: absolute;
+  content:"";
+  display: inline-block;
+  margin:5px 0 0 0;
+  left:-35px;
+  width:26px;
+  height: 26px;
+  border:#BEB1A6 2px solid;
+  border-radius: 30px;
+  z-index: 10;
+}
+
+.page-main__form-input__area--radio input[type=radio]:checked + .gender-label::after {
+  position: absolute;
+  content:"";
+  display: inline-block;
+  margin:5px 0 0 0;
+  left:-35px;
+  width:26px;
+  height: 26px;
+  background-color: #BEB1A6;
+  border:#BEB1A6 2px solid;
+  border-radius: 30px;
+  z-index: 15;
+}
+
+.form-input__email,
+.form-input__address,
+.form-input__building,
+.form-input__contact {
+  width:100%;
+  background-color: #F4F4F4;
+  color: #BEB1A6;
+  border: none;
+  font-size: 18px;
+}
+
+.form-input__tel {
+  width:180px;
+  height:38px;
+  background-color: #F4F4F4;
+  color: #BEB1A6;
+  border: none;
+  font-size: 18px;
+  text-align: center;
+}
+
+.form-input__tel::placeholder {
+  text-align: center;
+}
+
+.div__hyfun{
+  height:38px;
+  font-size:24px;
+  line-height: 38px;
+}
+
+.page-main__form-input__area--category {
+  position: relative;
+  width:630px;
+}
+.form-input__category {
+  position: relative;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  width:330px;
+  height: 40px;
+  padding-left:20px;
+  background-color: #F4F4F4;
+  color: #BEB1A6;
+  border: none;
+  font-size: 14px;
+}
+
+.page-main__form-input__area--category::after {
+  position: absolute;
+  content: "";
+  top: 15px;
+  left: 280px;
+  width: 32px;
+  height: 18px;
+  background-color: #BEB1A6;
+  clip-path: polygon(0 0, 100% 0%, 50% 100%);
+  pointer-events: none;
+}
+
+.form-input__contact {
+  height:130px;
+  padding-top:12px;
+}
+
+.page-main__form-input--submit{
+  width:100%;
+  margin-top:50px;
+}
+
+.form-input__submit {
+  display: block;
+  cursor: pointer;
+  width: 160px;
+  height:46px;
+  margin:0 auto;
+  text-align: center;
+  line-height: 46px;
+  font-size: 26px;
+  background-color: #82756A;
+  border: none;
+  color:#FFFFFF;
+}
