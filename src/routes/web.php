@@ -19,7 +19,7 @@ use App\Http\Controllers\ContactController;
 Route::get('/', [ContactController::class, 'index']);
 Route::post('/confirm', [ContactController::class, 'confirm'])->name('confirm');
 Route::post('/confirm/store', [ContactController::class, 'store'])->name('store');
-//Route::get('/thanks', [ContactController::class, 'thanks'])->name('thanks');
+Route::get('/thanks', [ContactController::class, 'thanks'])->name('thanks');
 
 // 管理画面関連
 //Route::middleware('auth')->group(function () {
