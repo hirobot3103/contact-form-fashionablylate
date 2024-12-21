@@ -7,7 +7,17 @@
 @endsection
 
 @section('main-page')
-<main class="page-main">
+  <div class="page-wrapper">
+    <header class="page-header">
+      <div class="page-header__title">
+        <span>FashionablyLate</span>
+      </div>
+      <div class="page-header__btn">
+        <!-- loginボタン等の配置位置 -->
+      </div>
+    </header>
+
+    <main class="page-main">
       <div class="page-main__title">
         <span>Confirm</span>
       </div>
@@ -98,7 +108,7 @@
           </table>
           <div class="form-input--submit">
               <button class="form-input__submit" type="submit">送信</button>
-              <a class="form-input__link-modify" href="/">修正</a>
+              <a class="form-input__link-modify" href="#" onclick="event.preventDefault(); history.back();">修正</a>
           </div>
         </form>
         <!-- <div class="form-input__link">

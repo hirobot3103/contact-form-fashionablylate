@@ -36,11 +36,11 @@ class ContactController extends Controller
             'email' => $contact['email'],
             'tel' => $contact['tel1'].$contact['tel2'].$contact['tel3'],
             'address' => $contact['address'],
-            'building' => $contact['first_name'],
+            'building' => $contact['building'],
             'detail' => $contact['detail'],
         ];
         Contact::create($param);
-        // return view('thanks');
+        //return view('thanks');
         return redirect('/thanks');
     }
 
