@@ -22,8 +22,8 @@ Route::post('/confirm/store', [ContactController::class, 'store'])->name('store'
 Route::get('/thanks', [ContactController::class, 'thanks'])->name('thanks');
 
 // 管理画面関連
-//Route::middleware('auth')->group(function () {
-//    Route::get('/admin', [AuthController::class, 'index']);
-//    Route::post('/admin/search', [AuthController::class, 'search']);
-//    Route::get('/admin/delete', [AuthController::class, 'delete']);
-//});
+Route::middleware('auth')->group(function () {
+   Route::get('/admin', [AuthController::class, 'index'])->name('admin');
+   Route::post('/admin/search', [AuthController::class, 'search'])->name('search');
+   Route::get('/admin/delete', [AuthController::class, 'delete'])->name('delete');
+});

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FashionablyLate 管理画面ログイン</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inika&family=Noto+Serif+JP&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/sanitaize.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/login.css">
+
+</head>
+<body>
+  <div class="page-wrapper">
+    <header class="page-header">
+      <div class="page-header__title">
+        <span>FashionablyLate</span>
+      </div>
+      <div class="page-header__btn">
+        <!-- loginボタン等の配置位置 -->
+        <a class="page-header__btn-link" href="/register">register</a>
+      </div>
+    </header>
+
+    <main class="page-main">
+      <div class="page-main__title">
+        <span>Login</span>
+      </div>
+      <div class="page-main__contents">
+        <form action="/login" class="page-main__form" method="POST">
+
+          <div class="page-main__form-input">
+              <label for="email">メールアドレス</label>
+              <div class="page-main__form-input__area">
+                <input type="email" id="email" name="email" class="form-input__name" placeholder="例：test@example.com">
+              </div>
+          </div>
+
+          <div class="page-main__form-input">
+            <label for="password">パスワード</label>
+            <div class="page-main__form-input__area">
+              <input type="text" id="password" name="password" class="form-input__name" placeholder="例：coachtech06">
+            </div>
+          </div>
+
+          <div class="page-main__form-input--submit">
+              <button class="form-input__submit" type="submit">ログイン</button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
