@@ -29,9 +29,11 @@
   flex-direction: row;
   width:100%;
   /* background-color: blueviolet; */
-  margin-bottom: 30px;
+  margin-top: 30px;
 }
-
+.page-main__form-input:first-of-type {
+  margin-top: 0px;
+}
 .page-main__form-input > label {
   display: inline-block;
   width:300px;
@@ -51,6 +53,17 @@
   width:630px;
 }
 
+.form-input__varidation{
+  display: block;
+  padding-left: 20px;
+  background-color: #fad0d0;
+  color: red;
+  height:20px;
+  line-height: 20px;
+  font-size:14px;
+  font-weight: 700;
+}
+
 .form-input__name {
   width:290px;
   height:40px;
@@ -64,8 +77,7 @@
 .form-input__email::placeholder,
 .form-input__tel::placeholder,
 .form-input__address::placeholder,
-.form-input__building::placeholder,
-.form-input__contact::placeholder {
+.form-input__building::placeholder {
   padding-left: 20px;
   font-size: 14px;
   color: #BEB1A6;
@@ -116,6 +128,7 @@
   z-index: 15;
 }
 /* 性別選択部分　ここまで */
+
 .form-input__email,
 .form-input__address,
 .form-input__building,
@@ -182,7 +195,12 @@
   height:130px;
   padding-top:12px;
 }
-
+.form-input__contact::placeholder {
+  /* padding-top:12px; */
+  padding-left: 20px;
+  font-size: 14px;
+  color: #BEB1A6;
+}
 .page-main__form-input--submit{
   width:100%;
   margin-top:50px;

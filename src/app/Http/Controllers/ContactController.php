@@ -19,9 +19,9 @@ class ContactController extends Controller
     {
         $contact = $request->only(['first_name', 'last_name','gender','email', 'tel1','tel2','tel3', 'address','building','category','detail']);
         $category = Category::find($contact['category']);
-        dd($contact);
+        // dd($contact);
+        // dd($category);
         return view('confirm', compact('contact','category'));
-        // return redirect('/confirm/store');
     }
 
     public function store()
