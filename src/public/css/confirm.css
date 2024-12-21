@@ -54,6 +54,7 @@
 
 .confirm-data__text {
   outline: none;
+  color: #BEB1A6;
   width:90%;
   height: 26px;
   line-height: 26px;
@@ -63,6 +64,7 @@
 
 .confirm-data__textarea {
   outline: none;
+  color: #BEB1A6;
   /* margin-top:20px; */
   margin-left: 30px;
   width:90%;
@@ -76,6 +78,7 @@
 .confirm-data__text:first-of-type,
 .confirm-text__name,
 .confirm-text__tel {
+  color: #BEB1A6;
   margin-left: 30px;
 }
 
