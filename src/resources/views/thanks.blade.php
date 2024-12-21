@@ -7,6 +7,7 @@
 @endsection
 
 @section('main-page')
+  <div class="page-wrapper">
     <main class="page-main">
       <div class="page-main__bgcontent">Thank you</div>
       <div class="page-main__content">

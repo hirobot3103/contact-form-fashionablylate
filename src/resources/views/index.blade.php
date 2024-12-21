@@ -7,6 +7,16 @@
 @endsection
 
 @section('main-page')
+  <div class="page-wrapper">
+    <header class="page-header">
+      <div class="page-header__title">
+        <span>FashionablyLate</span>
+      </div>
+      <div class="page-header__btn">
+        <!-- loginボタン等の配置位置 -->
+      </div>
+    </header>
+
     <main class="page-main">
       <div class="page-main__title">
         <span>Contact</span>

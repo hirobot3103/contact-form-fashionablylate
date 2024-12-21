@@ -16,15 +16,6 @@
 
 </head>
 <body>
-  <div class="page-wrapper">
-    <header class="page-header">
-      <div class="page-header__title">
-        <span>FashionablyLate</span>
-      </div>
-      <div class="page-header__btn">
-        <!-- loginボタン等の配置位置 -->
-      </div>
-    </header>
 
 @yield('main-page')
 
