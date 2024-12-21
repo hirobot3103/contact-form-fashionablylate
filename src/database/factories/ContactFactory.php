@@ -23,7 +23,7 @@ class ContactFactory extends Factory
         $address = $this->faker->prefecture() . $this->faker->city() . $this->faker->streetAddress();
 
         return [
-            'categry_id' => $this->faker->numberBetween(1, 5),
+            'category_id' => $this->faker->numberBetween(1, 5),
             'first_name' => $this->faker->firstName(),
             'last_name' => $this->faker->lastName(),
             'gender' => $this->faker->numberBetween(1, 3),
