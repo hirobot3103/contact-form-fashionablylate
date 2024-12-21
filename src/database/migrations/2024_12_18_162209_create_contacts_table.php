@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();
-            $table->foreignID('categry_id')->constrained('categories');
+            $table->foreignID('category_id')->constrained('categories');
             $table->string('first_name',255);
             $table->string('last_name',255);
             $table->tinyInteger('gender'); // 1:male 2:female 3:other
