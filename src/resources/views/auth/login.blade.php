@@ -1,51 +1,55 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>仮　管理画面：ログイン</title>
-  <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/common.css') }}">
+@extends('layouts.cmn')
 
-</head>
-<body>
-  <header class="header">
-    <div>
-      <p>仮　管理画面：ログイン</p>
-      <ul class="header-nav">
-      @if (Auth::check())
-      <li class="header-nav__item">
-        <a class="header-nav__link" href="/mypage">マイページ</a>
-      </li>
-      <li class="header-nav__item">
-        <form action="/logout" method="post">
-          @csrf
-          <button class="header-nav__button" type="submit">ログアウト</button>
+@section('subtitle', "管理画面 ログイン")
+
+@section('style-link')
+  <link rel="stylesheet" href="{{ asset('css/login.css') }}"> 
+@endsection
+
+@section('main-page')
+<div class="page-wrapper">
+    <header class="page-header">
+      <div class="page-header__title">
+        <span>FashionablyLate</span>
+      </div>
+      <div class="page-header__btn">
+        <!-- loginボタン等の配置位置 -->
+        <a class="page-header__btn-link" href="/register">register</a>
+      </div>
+    </header>
+
+    <main class="page-main">
+      <div class="page-main__title">
+        <span>Login</span>
+      </div>
+      <div class="page-main__contents">
+        <form action="/login" class="page-main__form" method="POST">
+@csrf
+          <div class="page-main__form-input">
+              <label for="email">メールアドレス</label>
+              <div class="page-main__form-input__area">
+                <input type="email" id="email" name="email" class="form-input__name" placeholder="例：test@example.com">
+              </div>
+          </div>
+@error('email')
+          <div class="form-input__varidation">{{ $message }}</div>  
+@enderror
+
+          <div class="page-main__form-input">
+            <label for="password">パスワード</label>
+            <div class="page-main__form-input__area">
+              <input type="text" id="password" name="password" class="form-input__name" placeholder="例：coachtech06">
+            </div>
+          </div>
+@error('password')
+          <div class="form-input__varidation">{{ $message }}</div>  
+@enderror
+
+          <div class="page-main__form-input--submit">
+              <button class="form-input__submit" type="submit">ログイン</button>
+          </div>
         </form>
-      </li>
-      @endif
-    </ul>
-    </div>
-  </header>
-  <main class="main">
-  @if ($errors->any())
-        <div>
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-    <form action="{{route('login')}}" method="post">
-      @csrf
-      email:<input type="email" name="email" value="{{ old('email') }}" />
-      <br>
-      pass:<input type="password" name="password" />
-      <br>
-      <button type="submit">ログイン</button>
-    </form>
-  </main>
-</body>
-</html>
+      </div>
+    </main>
+  </div>
+@endsection
