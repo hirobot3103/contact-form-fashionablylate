@@ -13,16 +13,24 @@
       </div>
       <div class="page-main__contents">
 
-        <form action="" class="page-main__form" method="POST">
+        <form action="{{ route('confirm') }}" class="page-main__form" method="POST">
+@csrf
           <div class="page-main__form-input">
             <label for="lastname">
               お名前<span>&nbsp※</span>
             </label>
             <div class="page-main__form-input__area">
-              <input type="text" id="lastname" class="form-input__name" name="lastname" placeholder="例：山田">
-              <input type="text" id="firstname" class="form-input__name" name="firstname" placeholder="例：太郎">
+              <input type="text" id="lastname" class="form-input__name" name="last_name" placeholder="例：山田">
+              <input type="text" id="firstname" class="form-input__name" name="first_name" placeholder="例：太郎">
             <!-- バリデーションエラー表示位置 -->    
-            </div>        
+            </div>
+@error('last_name')
+  {{ $message }} 
+@enderror
+@error('first_name')
+  {{ $message }} 
+@enderror
+
           </div>
 
           <div class="page-main__form-input">
@@ -36,6 +44,10 @@
               <label class="gender-label" for="gender_other">その他</label>
             <!-- バリデーションエラー表示位置 -->    
             </div>                   
+@error('gender')
+  {{ $message }} 
+@enderror
+
           </div>
 
           <div class="page-main__form-input">           
@@ -43,6 +55,10 @@
               <div class="page-main__form-input__area">
                 <input type="email" id="email" name="email" class="form-input__email" placeholder="例：test@example.com">
               </div>
+@error('email')
+  {{ $message }} 
+@enderror
+
           </div>
 
           <div class="page-main__form-input">
@@ -54,6 +70,16 @@
               <div class="div__hyfun">-</div>
               <input type="number" id="tel3" name="tel3" class="form-input__tel" placeholder="5678">
             </div>
+@error('tel1')
+  {{ $message }} 
+@enderror
+@error('tel2')
+  {{ $message }} 
+@enderror
+@error('tel3')
+  {{ $message }} 
+@enderror
+
           </div>
 
           <div class="page-main__form-input">
@@ -61,6 +87,10 @@
             <div class="page-main__form-input__area">
               <input type="text" id="address" name="address" class="form-input__address" placeholder="例：東京都渋谷区千駄ヶ谷1-2-3">
             </div>
+@error('address')
+  {{ $message }} 
+@enderror
+
           </div>
 
           <div class="page-main__form-input">
@@ -68,6 +98,10 @@
             <div class="page-main__form-input__area">
               <input type="text" id="building" name="building" class="form-input__building" placeholder="例：千駄ヶ谷マンション101">
             </div>
+@error('building')
+  {{ $message }} 
+@enderror
+
           </div>
 
           <div class="page-main__form-input">
@@ -75,19 +109,26 @@
             <div class="page-main__form-input__area--category">
               <select name="category" id="category" class="form-input__category" >
                 <option value="" selected disabled>選択してください</option>
-                @foreach($categorydata as $item)
+@foreach($category_data as $item)
                 <option value="{{$item->id}}">{{$item->content}}</option>
-                @endforeach
+@endforeach
               </select>
             </div>
+@error('category')
+  {{ $message }} 
+@enderror
+
           </div>
 
           <div class="page-main__form-input">
-            <label for="contact">お問い合わせ内容<span>&nbsp※</span></label>
+            <label for="detail">お問い合わせ内容<span>&nbsp※</span></label>
             <div class="page-main__form-input__area">
-              <textarea id="contact" name="contact" class="form-input__contact" placeholder="例：千駄ヶ谷マンション101" cols="50" row="10">
+              <textarea id="detail" name="detail" class="form-input__contact" placeholder="例：千駄ヶ谷マンション101" cols="50" row="10">
               </textarea> 
             </div>
+@error('detail')
+  {{ $message }} 
+@enderror
           </div>
           
           <div class="page-main__form-input--submit">
