@@ -1,0 +1,102 @@
+@charset 'utf-8';
+
+.page-main {
+  width:100%;
+  height:100%;
+  background-color: #BEB1A6;
+}
+
+.page-main__title {
+  text-align: center;
+}
+
+.page-main__title > span {
+  display: inline-block;
+  margin: 50px 0;
+  font-size: 35px;
+}
+
+.page-main__contents {
+  width:630px;
+  margin: 0 auto;
+  padding: 20px 0;
+  background-color: #FFFFFF;
+}
+
+.page-main__form {
+  width:100%;
+}
+
+.page-main__form-input {
+  /* display: flex;
+  flex-direction: row; */
+  width:400px;
+  /* background-color: blueviolet; */
+  margin: 30px auto 0;
+}
+
+.page-main__form-input > label {
+  display: inline-block;
+  width:300px;
+  height:40px;
+  font-size:26px;
+  line-height: 40px;
+  /* background-color: aqua; */
+}
+
+.page-main__form-input__area {
+  display: flex;
+  justify-content: space-between;
+  width:400px;
+}
+
+.form-input__name {
+  width:100%;
+  height:40px;
+  background-color: #F4F4F4;
+  color: #BEB1A6;
+  border: none;
+  font-size: 18px;
+}
+
+.form-input__name::placeholder {
+  padding-left: 20px;
+  font-size: 14px;
+  color: #BEB1A6;
+}
+
+.form-input__email,
+.form-input__address,
+.form-input__building,
+.form-input__contact {
+  width:100%;
+  background-color: #F4F4F4;
+  color: #BEB1A6;
+  border: none;
+  font-size: 18px;
+}
+
+.form-input__contact {
+  height:130px;
+  padding-top:12px;
+}
+
+.page-main__form-input--submit{
+  width:100%;
+  margin-top:50px;
+}
+
+.form-input__submit {
+  display: block;
+  cursor: pointer;
+  width: 160px;
+  height:46px;
+  margin:0 auto;
+  text-align: center;
+  line-height: 46px;
+  font-size: 26px;
+  background-color: #82756A;
+  border: none;
+  color:#FFFFFF;
+  margin-bottom: 30px;
+}

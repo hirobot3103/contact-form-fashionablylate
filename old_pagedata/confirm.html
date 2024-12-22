@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FashionablyLate お問い合わせ内容確認フォーム</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inika&family=Noto+Serif+JP&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/sanitaize.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/confirm.css">
+
+</head>
+<body>
+  <div class="page-wrapper">
+    <header class="page-header">
+      <div class="page-header__title">
+        <span>FashionablyLate</span>
+      </div>
+      <div class="page-header__btn">
+        <!-- loginボタン等の配置位置 -->
+      </div>
+    </header>
+
+    <main class="page-main">
+      <div class="page-main__title">
+        <span>Confirm</span>
+      </div>
+      <div class="page-main__contents">
+        <form action="" class="page-main__form" method="POST">
+          <table class="confirm-data">
+            <tr>
+              <th><span>お名前</span></th>
+              <td>
+                <div class="confirm-text__name">
+                  <span></span>
+                </div>
+                <input type="hidden" class="confirm-data__text" name="lastname" value="" readonly>
+                <input type="hidden" class="confirm-data__text" name="firstname" value="" readonly>
+              </td>
+            </tr>
+            <tr>
+              <th><span>性別</span></th>
+              <td>
+                <input type="text" class="confirm-data__text" name="gender" value="" readonly>
+              </td>
+            </tr>
+            <tr>
+              <th><span>メールアドレス</span></th>
+              <td>
+                <input type="email" class="confirm-data__text" name="email" value="" readonly>
+              </td>
+            </tr>
+            <tr>
+              <th><span>電話番号</span></th>
+              <td>
+                <div class="confirm-text__tel">
+                  <span></span>
+                </div>
+                <input type="hidden" class="confirm-data__text" name="tel1" value="1" readonly>
+                <input type="hidden" class="confirm-data__text" name="tel2" value="1" readonly>
+                <input type="hidden" class="confirm-data__text" name="tel3" value="1" readonly>
+              </td>
+            </tr>
+            <tr>
+              <th><span>住所</span></th>
+              <td>
+                <input type="text" class="confirm-data__text" name="address" value="" readonly>
+              </td>
+            </tr>
+            <tr>
+              <th><span>建物名</span></th>
+              <td>
+                <input type="text" class="confirm-data__text" name="building" value="" readonly>
+              </td>
+            </tr>
+            <tr>
+              <th><span>お問い合わせの種類</span></th>
+              <td>
+                <input type="text" class="confirm-data__text" name="category" value="" readonly>
+              </td>
+            </tr>
+            <tr class="confirm__contents">
+              <th><span>お問い合わせ内容</span></th>
+              <td>
+                <textarea class="confirm-data__textarea" name="contact" cols="50" row="10" readonly>
+
+                </textarea>
+              </td>
+            </tr>
+          </table>
+          <div class="form-input--submit">
+              <button class="form-input__submit" type="submit">送信</button>
+              <a class="form-input__link-modify" href="/">修正</a>
+          </div>
+        </form>
+        <!-- <div class="form-input__link">
+          <a class="form-input__link-modify" href="/">修正</a>
+        </div> -->
+      </div>
+    
+    </main>
+  </div>
+</body>
+</html>
