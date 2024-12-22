@@ -588,6 +588,8 @@
   line-height: 26px;
   font-size: 20px;
   border: none;
+  color: #BEB1A6;
+
 }
 
 .confirm-data__textarea--modal {
@@ -600,20 +602,20 @@
   font-size: 20px;
   border: none;
   overflow: hidden;
+  color: #BEB1A6;
 }
 
 .confirm-data__text--modal:first-of-type,
 .confirm-text__name--modal,
 .confirm-text__tel--modal {
   margin-left: 30px;
+  color: #BEB1A6;
 }
 
 .confirm__contents--modal > td {
   height: 40px;
-  /* height: auto; */
-}
-.confirm__contents--modal > td {
-  height: 40px;
+  color: #BEB1A6;
+
 }
 
 .page-main__form-input--submit-modal{
@@ -633,4 +635,35 @@
   background-color: #FF9494;
   border: none;
   color:#FFFFFF;
+}
+
+/* ページネーション関連 */
+.pagination {
+  display: inline-flex;
+  row-gap: 0;
+}
+.pagination li {
+
+  border:1px solid #BEB1A6;
+  display: inline-block;
+  margin:0;
+  padding:0;
+  width:30px;
+  height:30px;
+  line-height: 30px;
+  text-align: center;
+}
+
+.pagination li a {
+  display: block;
+  text-decoration: none;
+  line-height: 30px;
+  font-size: 16px;
+}
+
+.pagination li a:hover {
+  text-decoration: none;
+  display: block;
+  background-color:#BAA899;
+  color: #F4F4F4;
 }

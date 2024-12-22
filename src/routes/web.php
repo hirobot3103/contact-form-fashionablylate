@@ -24,6 +24,6 @@ Route::get('/thanks', [ContactController::class, 'thanks'])->name('thanks');
 // 管理画面関連
 Route::middleware('auth')->group(function () {
    Route::get('/admin', [AuthController::class, 'index']);
-   Route::post('/admin/search', [AuthController::class, 'search'])->name('search');
-   Route::get('/admin/delete', [AuthController::class, 'delete'])->name('delete');
+   Route::get('/admin/search', [AuthController::class, 'search'])->name('search');
+   Route::post('/admin/delete', [AuthController::class, 'delete'])->name('delete');
 });
