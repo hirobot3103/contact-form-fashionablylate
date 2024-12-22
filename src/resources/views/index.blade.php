@@ -14,7 +14,7 @@
       </div>
       <div class="page-header__btn">
         <!-- loginボタン等の配置位置 -->
-        <a class="page-header__btn-link" href="/login">管理画面</a>
+        <a class="page-header__btn-link" href="/admin">管理画面</a>
       </div>
     </header>
 
