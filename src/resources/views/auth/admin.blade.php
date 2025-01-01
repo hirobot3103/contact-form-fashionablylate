@@ -170,6 +170,7 @@
 
         <div class="btn-nav-area">
           <form action="/admin/csv" class="page-main__form" method="POST">
+            @csrf
             <div class="page-main__form-input">
               <div class="page-main__form-input__area">
                 <button class="form-input__csv" type="submit" name='expo'>エクスポート</button>
