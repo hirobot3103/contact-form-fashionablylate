@@ -54,12 +54,10 @@ class Contact extends Model
 
     public function scopeDateSearch($query, $keyword)
     {
-        $dt = Carbon::today()->parse($keyword);
-        $param = $dt->format('Y-m-d');
+        $dt = Carbon::today()->parse( $keyword );
+        $param = $dt->format( 'Y-m-d' );
         if (!empty($keyword)) {
-            $query->whereDate('updated_at', $param);
+            $query->whereDate( 'updated_at', $param );
         }
     }
-
-
 }
