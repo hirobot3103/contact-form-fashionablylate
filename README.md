@@ -8,7 +8,7 @@
    ＊　開発環境に合わせて .envファイル等を編集してください。  
   
 ・　Laravel環境構築  
- 　（１）docker compose exec php bash  
+  （１）docker compose exec php bash  
   （２）composer install  
   （３）.env.exampleファイルから.envを作成し、環境変数を変更  
   （４）php artisan key:generate  
