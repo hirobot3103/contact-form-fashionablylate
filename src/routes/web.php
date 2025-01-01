@@ -26,4 +26,5 @@ Route::middleware('auth')->group(function () {
    Route::get('/admin', [AuthController::class, 'index']);
    Route::get('/admin/search', [AuthController::class, 'search'])->name('search');
    Route::post('/admin/delete', [AuthController::class, 'delete'])->name('delete');
+   Route::post('/admin/csv', [AuthController::class, 'export'])->name('export');
 });

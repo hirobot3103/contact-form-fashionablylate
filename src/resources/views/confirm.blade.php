@@ -13,7 +13,6 @@
         <span>FashionablyLate</span>
       </div>
       <div class="page-header__btn">
-        <!-- loginボタン等の配置位置 -->
       </div>
     </header>
 
@@ -39,23 +38,23 @@
               <th><span>性別</span></th>
               <td>
                 <div class="confirm-text__name">
-@php
-  $gendervalue = "";
-  if ( $contact['gender'] != "" ) {
-    switch ( $contact['gender'] ){
-      case "1":
-        $gendervalue = "男性";
-        break;
-      case "2":
-        $gendervalue = "女性";
-        break;
-      case "3":
-        $gendervalue = "その他";
-        break;
-      default:
-    }
-  }
-@endphp
+                  @php
+                    $gendervalue = "";
+                    if ( $contact['gender'] != "" ) {
+                      switch ( $contact['gender'] ){
+                        case "1":
+                          $gendervalue = "男性";
+                          break;
+                        case "2":
+                          $gendervalue = "女性";
+                          break;
+                        case "3":
+                          $gendervalue = "その他";
+                          break;
+                        default:
+                      }
+                    }
+                  @endphp
                   <span>{{ $gendervalue }}</span>
                 </div>
                 <input type="hidden" class="confirm-data__text" name="gender" value="{{ $contact['gender'] }}">
@@ -64,7 +63,7 @@
             <tr>
               <th><span>メールアドレス</span></th>
               <td>
-                <input type="email" class="confirm-data__text" name="email" value="{{ $contact['email'] }}">
+                <input type="text" class="confirm-data__text" name="email" value="{{ $contact['email'] }}">
               </td>
             </tr>
             <tr>
@@ -107,13 +106,10 @@
             </tr>
           </table>
           <div class="form-input--submit">
-              <button class="form-input__submit" type="submit">送信</button>
-              <a class="form-input__link-modify" href="#" onclick="event.preventDefault(); history.back();">修正</a>
+              <button class="form-input__submit" type="submit" name="send">送信</button>
+              <button class="form-input__mod" type="submit" name="mod">修正</button>
           </div>
         </form>
-        <!-- <div class="form-input__link">
-          <a class="form-input__link-modify" href="/">修正</a>
-        </div> -->
       </div>
     </main>
   </div>

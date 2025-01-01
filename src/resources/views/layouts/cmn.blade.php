@@ -12,12 +12,12 @@
 
   <link rel="stylesheet" href="{{ asset('css/sanitaize.css') }}">
   <link rel="stylesheet" href="{{ asset('css/common.css') }}">
-@yield('style-link')
+  @yield('style-link')
 
 </head>
 <body>
 
-@yield('main-page')
+  @yield('main-page')
 
 </body>
 </html>
