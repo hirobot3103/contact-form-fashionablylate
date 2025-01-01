@@ -38,6 +38,9 @@ class ContactController extends Controller
 
     public function store(ContactRequest $request)
     {
+        if ( $request->has('mod') ) {
+            return redirect('/')->withInput();    
+        }
         $contact = $request->only(
             [
                 'first_name',

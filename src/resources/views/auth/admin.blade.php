@@ -8,8 +8,8 @@
 
 @section('main-page')
 
-@foreach($contacts as $contact)
-  <!-- モーダル風div １ページ表示分-->
+  @foreach($contacts as $contact)
+  <!-- モーダル風div １ページ表示分 ID:{{$contact['id']}} -->
   <style>
   #modal-switch{{$contact['id']}} {
     display: none;
@@ -59,7 +59,7 @@
         <tr>
           <th><span>メールアドレス</span></th>
           <td>
-            <input type="email" class="confirm-data__text--modal" name="email" value="{{$contact['email']}}" readonly>
+            <input type="text" class="confirm-data__text--modal" name="email" value="{{$contact['email']}}" readonly>
           </td>
         </tr>
         <tr>
@@ -110,8 +110,9 @@
     </form>
     </div>
   </div>
-@endforeach
-<!-- モーダル風div ここまで -->
+  <!-- モーダル風div ID:{{$contact['id']}} ここまで -->
+  @endforeach
+
 
   <div class="page-wrapper">
     <header class="page-header">
@@ -119,7 +120,6 @@
         <span>FashionablyLate</span>
       </div>
       <div class="page-header__btn">
-        <!-- <a class="page-header__btn-link" href="/logout">Logout</a> -->
         <form action="/logout" method="post">
           @csrf
           <button class="page-header__btn-link" type="submit">Logout</a>
@@ -163,7 +163,7 @@
                 </label>
               </div>
               <button class="form-input__search" type="submit">検索</button>
-              <button class="form-input__reset" type="reset">リセット</button>
+              <button class="form-input__reset" type="submit" name='reset'>リセット</button>
             </div>
           </div>
         </form>
@@ -172,13 +172,16 @@
           <form action="/admin/csv" class="page-main__form" method="POST">
             <div class="page-main__form-input">
               <div class="page-main__form-input__area">
-                <button class="form-input__csv" type="submit">エクスポート</button>
+                <button class="form-input__csv" type="submit" name='expo'>エクスポート</button>
+                <input type="hidden" name="keyword" value="{{$csvData['keyword']}}">
+                <input type="hidden" name="gender" value="{{$csvData['gender']}}">
+                <input type="hidden" name="contact" value="{{$csvData['contact']}}">
+                <input type="hidden" name="date" value="{{$csvData['date']}}">
               </div>
             </div>
           </form>
           <div class="page-main__form-input">
-            {{ $contacts->links() }}
-            <!-- <button class="form-input__pager" type="submit">ページ</button> -->
+            {{ $contacts->appends(request()->query())->links() }}
           </div>
         </div>
 
@@ -214,7 +217,7 @@
               <input type="text" class="confirm-data__text--gender" name="gender" value="{{$gender_type}}" readonly>
             </td>
             <td>
-              <input type="email" class="confirm-data__text" name="email" value="{{$contact['email']}}" readonly>
+              <input type="text" class="confirm-data__text" name="email" value="{{$contact['email']}}" readonly>
             </td>
             <td>
               <input type="text" class="confirm-data__text" name="category" value="{{$contact->Category['content']}}" readonly>

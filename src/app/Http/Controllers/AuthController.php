@@ -13,21 +13,50 @@ class AuthController extends Controller
     {
         $contacts = Contact::with('Category')->paginate(7);
         $categories = Category::All();
-        return view('auth.admin', compact('contacts','categories'));
+        $csvData = [
+            'keyword' => "",
+            'gender' => "",
+            'contact' => "",
+            'date' => "",
+        ];
+        return view('auth.admin', compact('contacts','categories' , 'csvData'));
     }
 
     public function search(Request $request)
     {
-        $contacts = Contact::with('Category')->KeywordSearch($request->keyword)->GenderSearch($request->gender)->ContactSearch($request->contact)->DateSearch($request->date)->paginate(7);
+        if ($request->has('reset')) {
+            return redirect('/admin')->withInput();
+        }
+        $contacts = Contact::with('Category')
+                    ->KeywordSearch($request->keyword)
+                    ->GenderSearch($request->gender)
+                    ->ContactSearch($request->contact)
+                    ->DateSearch($request->date)
+                    ->paginate(7);
         $categories = Category::All();
-        return view('auth.admin', compact('contacts','categories'));     
+        $csvData = $request;
+        return view('auth.admin', compact('contacts','categories', 'csvData'));     
     }
 
     public function delete(Request $request)
     {
         $contact_del = Contact::find($request->id);
-        $redirect_url = $request->currenturl;
+        // $redirect_url = $request->currenturl;
         $contact_del->delete($request->id);
-        return redirect($redirect_url); //　削除したデータのあったページへ戻る
+        // return redirect($redirect_url); //　削除したデータのあったページへ戻る
+        return redirect('/admin'); 
+
+    }
+
+    public function export(Request $request)
+    {
+        $contacts = Contact::with('Category')
+        ->KeywordSearch($request->keyword)
+        ->GenderSearch($request->gender)
+        ->ContactSearch($request->contact)
+        ->DateSearch($request->date)
+        ->get()
+        ->toArray();
+
     }
 }

@@ -106,6 +106,19 @@
   color:#FFFFFF;
 }
 
+/* 修正ボタン */
+.form-input__mod {
+  width: 80px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 20px;
+  margin-left:40px;
+  border: none;
+  border-bottom: 1px #82756A solid;
+  cursor: pointer;
+}
+
 .form-input__link-modify {
   margin-left: 30px;
   font-size: 20px;
