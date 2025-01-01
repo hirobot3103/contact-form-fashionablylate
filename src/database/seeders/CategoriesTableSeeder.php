@@ -8,9 +8,6 @@ use Illuminate\Support\Facades\DB;
 
 class CategoriesTableSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
         // お問い合わせの種類：カテゴリー5件
@@ -22,7 +19,7 @@ class CategoriesTableSeeder extends Seeder
             [ 'content' => 'その他' ],
         ];
 
-        foreach ( $seeds as $param) {
+        foreach ( $seeds as $param ) {
             DB::table('categories')->insert($param);
         }
     }

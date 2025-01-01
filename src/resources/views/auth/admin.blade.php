@@ -38,21 +38,21 @@
         <tr>
           <th><span>性別</span></th>
           <td>
-@php
-  $gender_type = "";
-  switch ( $contact['gender'] ) {
-    case "1":
-      $gender_type = "男性";
-      break;
-    case "2":
-      $gender_type = "女性";
-      break;
-    case "3":
-      $gender_type = "その他";
-      break;
-    default:      
-  }
-@endphp
+            @php
+              $gender_type = "";
+              switch ( $contact['gender'] ) {
+                case "1":
+                  $gender_type = "男性";
+                  break;
+                case "2":
+                  $gender_type = "女性";
+                  break;
+                case "3":
+                  $gender_type = "その他";
+                  break;
+                default:      
+              }
+            @endphp
             <input type="text" class="confirm-data__text--modal" name="gender" value="{{$gender_type}}" readonly>
           </td>
         </tr>
@@ -97,11 +97,11 @@
       </table>
       <div class="form-input--submit-modal">
         <form action="/admin/delete" method="post">
-@csrf
-@php
-  $currentPage = $contacts->currentPage();
-  $currentUrl =  $contacts->url($currentPage);
-@endphp
+          @csrf
+          @php
+            $currentPage = $contacts->currentPage();
+            $currentUrl =  $contacts->url($currentPage);
+          @endphp
           <input type="hidden" name="id" value="{{$contact['id']}}">
           <input type="hidden" name="currenturl" value="{{$currentUrl}}">
           <button class="form-input__submit--modal" type="submit">削除</button>
@@ -111,7 +111,7 @@
     </div>
   </div>
 @endforeach
-  <!-- モーダル風div -->
+<!-- モーダル風div ここまで -->
 
   <div class="page-wrapper">
     <header class="page-header">
@@ -121,8 +121,8 @@
       <div class="page-header__btn">
         <!-- <a class="page-header__btn-link" href="/logout">Logout</a> -->
         <form action="/logout" method="post">
-@csrf
-        <button class="page-header__btn-link" type="submit">Logout</a>
+          @csrf
+          <button class="page-header__btn-link" type="submit">Logout</a>
         </form>
       </div>
     </header>
@@ -134,7 +134,7 @@
       <div class="page-main__contents">
 
         <form action="/admin/search" class="page-main__form" method="get">
-@csrf
+          @csrf
           <div class="page-main__form-input">
             <div class="page-main__form-input__area">
               <input type="text" id="keyword" class="form-input__keyword" name="keyword" placeholder="名前やメールアドレスを入力してください">
@@ -151,9 +151,9 @@
               <div class="page-main__form-input__area--category">
                 <select class="form-input__category" name="contact">
                   <option value="" selected disabled>お問い合わせの種類</option>
-@foreach($categories as $cat )
+                  @foreach($categories as $cat )
                   <option value="{{$cat['id']}}">{{$cat['content']}}</option>
-@endforeach
+                  @endforeach
                 </select>
               </div>
 
@@ -190,27 +190,27 @@
             <th><span>お問い合わせの種類</span></th>
             <th></th>
           </tr>
-@foreach($contacts as $contact)
+          @foreach($contacts as $contact)
           <tr>
             <td>
               <input type="text" class="confirm-data__text" name="name" value="{{$contact['last_name']}}&nbsp;{{$contact['first_name']}}" readonly>
             </td>
             <td>
-@php
-  $gender_type = "";
-  switch ( $contact['gender'] ) {
-    case "1":
-      $gender_type = "男性";
-      break;
-    case "2":
-      $gender_type = "女性";
-      break;
-    case "3":
-      $gender_type = "その他";
-      break;
-    default:      
-  }
-@endphp
+              @php
+                $gender_type = "";
+                switch ( $contact['gender'] ) {
+                  case "1":
+                    $gender_type = "男性";
+                    break;
+                  case "2":
+                    $gender_type = "女性";
+                    break;
+                  case "3":
+                    $gender_type = "その他";
+                    break;
+                  default:      
+                }
+              @endphp
               <input type="text" class="confirm-data__text--gender" name="gender" value="{{$gender_type}}" readonly>
             </td>
             <td>
@@ -223,7 +223,7 @@
               <label for="modal-switch{{$contact['id']}}" class="modal-label">詳細</label>
             </td>
           </tr>
-@endforeach
+          @endforeach
         </table>
       </div>
     </main>
