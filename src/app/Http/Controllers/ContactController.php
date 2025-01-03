@@ -32,14 +32,14 @@ class ContactController extends Controller
                 'detail'
             ]
         );
-        $category = Category::find($contact['category']);
-        return view('confirm', compact( 'contact', 'category' ));
+        $category = Category::find( $contact[ 'category' ] );
+        return view( 'confirm', compact( 'contact', 'category' ) );
     }
 
     public function store(ContactRequest $request)
     {
-        if ( $request->has('mod') ) {
-            return redirect('/')->withInput();    
+        if ( $request->has( 'mod' ) ) {
+            return redirect( '/' )->withInput();    
         }
         $contact = $request->only(
             [
@@ -57,13 +57,13 @@ class ContactController extends Controller
             ]
         );
         $param = [
-            'category_id' => $contact['category'],
-            'first_name' => $contact['first_name'],
-            'last_name' => $contact['last_name'],
-            'gender' => $contact['gender'],
-            'email' => $contact['email'],
-            'tel' => $contact['tel1'].$contact['tel2'].$contact['tel3'],
-            'address' => $contact['address'],
+            'category_id' => $contact[ 'category' ],
+            'first_name' => $contact[ 'first_name' ],
+            'last_name' => $contact[ 'last_name' ],
+            'gender' => $contact[ 'gender' ],
+            'email' => $contact[ 'email' ],
+            'tel' => $contact[ 'tel1' ].$contact[ 'tel2' ].$contact[ 'tel3' ],
+            'address' => $contact[ 'address' ],
             'building' => $contact['building'],
             'detail' => $contact['detail'],
         ];
