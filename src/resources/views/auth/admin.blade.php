@@ -119,7 +119,6 @@
         <span>FashionablyLate</span>
       </div>
       <div class="page-header__btn">
-        <!-- <a class="page-header__btn-link" href="/logout">Logout</a> -->
         <form action="/logout" method="post">
 @csrf
         <button class="page-header__btn-link" type="submit">Logout</a>
@@ -178,7 +177,6 @@
           </form>
           <div class="page-main__form-input">
             {{ $contacts->links() }}
-            <!-- <button class="form-input__pager" type="submit">ページ</button> -->
           </div>
         </div>
 

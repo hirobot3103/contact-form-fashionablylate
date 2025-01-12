@@ -36,17 +36,17 @@
   text-align: left;
   line-height: 70px;
   padding-left: 30px;
-  /* color:#E0DFDE; */
 }
+
 .confirm-data th span {
   color:#ffffff;
   font-size: 20px;
 }
+
 .confirm-data td {
   width:665px;
   height:70px;
   color: #BEB1A6;
-  /* background-color:aqua; */
   font-size: 20px;
   border: 2px solid #E0DFDE;
   border-left: none;
@@ -65,7 +65,6 @@
 .confirm-data__textarea {
   outline: none;
   color: #BEB1A6;
-  /* margin-top:20px; */
   margin-left: 30px;
   width:90%;
   height: 26px;

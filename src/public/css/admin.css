@@ -28,7 +28,6 @@
   display: flex;
   flex-direction: row;
   width:100%;
-  /* background-color: blueviolet; */
   margin-bottom: 30px;
 }
 
@@ -38,7 +37,6 @@
   height:40px;
   font-size:26px;
   line-height: 40px;
-  /* background-color: aqua; */
 }
 
 .page-main__form-input > label > span {
@@ -59,6 +57,7 @@
   border: none;
   font-size: 18px;
 }
+
 .form-input__keyword {
   width:250px;
   height:40px;
@@ -302,14 +301,15 @@
 .confirm-data tr {
   border: 2px solid #E0DFDE;
 }
+
 .confirm-data th {
   width:20%;
   height:40px;
   background-color: #BAA899;
   text-align: center;
   line-height: 40px;
-  /* color:#E0DFDE; */
 }
+
 .confirm-data th span {
   color:#ffffff;
   font-size: 20px;
@@ -320,7 +320,6 @@
   height:40px;
   line-height: 40px;
   color: #BEB1A6;
-  /* background-color:aqua; */
   font-size: 20px;
   border:none;
   border-left: none;
@@ -379,12 +378,10 @@
   font-size: 20px;
   border: none;
   color: #BEB1A6;
-  /* text-align: center; */
 }
 
 .confirm-data__textarea {
   outline: none;
-  /* margin-top:20px; */
   width:90%;
   height: 26px;
   line-height: 26px;
@@ -429,10 +426,8 @@
   top:50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  /* margin: 0 auto; */
   background-color: #ffffff;
   border: 1px solid #82756A;
-  /* box-shadow:; */
   color: #82756A;
 }
 
@@ -462,7 +457,8 @@
   height: 30px;
 }
 
-.modal-close > div::before, .modal-close > div::after {
+.modal-close > div::before, 
+.modal-close > div::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -540,11 +536,7 @@
 
 .form-input__csv{
   cursor: pointer;
-  /* width: 90px;
-  height:40px; */
   text-align: center;
-  /* line-height: 40px;
-  font-size: 16px; */
   background-color:#E0DFDE;
   border: none;
   color:#82756A;
@@ -564,18 +556,15 @@
   text-align: left;
   line-height: 40px;
   padding-left: 30px;
-  /* color:#E0DFDE; */
 }
 .confirm-data--modal th span {
   color: #BEB1A6;
   font-size: 20px;
 }
 .confirm-data--modal td {
-  /* width:250px; */
   height:40px;
   line-height: 40px;
   color: #BEB1A6;
-  /* background-color:aqua; */
   font-size: 20px;
   border:none;
   border-left: none;
@@ -594,10 +583,8 @@
 
 .confirm-data__textarea--modal {
   outline: none;
-  /* margin-top:20px; */
   margin-left: 30px;
   width:90%;
-  /* height: 26px; */
   line-height: 26px;
   font-size: 20px;
   border: none;
@@ -642,10 +629,10 @@
   display: inline-flex;
   row-gap: 0;
 }
-.pagination li {
 
-  border:1px solid #BEB1A6;
+.pagination li {
   display: inline-block;
+  border:1px solid #BEB1A6;
   margin:0;
   padding:0;
   width:30px;
@@ -662,8 +649,8 @@
 }
 
 .pagination li a:hover {
-  text-decoration: none;
   display: block;
+  text-decoration: none;
   background-color:#BAA899;
   color: #F4F4F4;
 }

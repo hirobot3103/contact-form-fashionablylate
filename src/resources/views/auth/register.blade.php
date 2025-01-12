@@ -13,7 +13,6 @@
         <span>FashionablyLate</span>
       </div>
       <div class="page-header__btn">
-        <!-- loginボタン等の配置位置 -->
         <a class="page-header__btn-link" href="/login">login</a>
       </div>
     </header>

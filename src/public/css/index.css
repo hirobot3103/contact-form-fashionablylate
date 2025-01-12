@@ -28,7 +28,6 @@
   display: flex;
   flex-direction: row;
   width:100%;
-  /* background-color: blueviolet; */
   margin-top: 30px;
 }
 .page-main__form-input:first-of-type {
@@ -40,7 +39,6 @@
   height:40px;
   font-size:26px;
   line-height: 40px;
-  /* background-color: aqua; */
 }
 
 .page-main__form-input > label > span {
@@ -196,7 +194,6 @@
   padding-top:12px;
 }
 .form-input__contact::placeholder {
-  /* padding-top:12px; */
   padding-left: 20px;
   font-size: 14px;
   color: #BEB1A6;

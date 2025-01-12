@@ -108,12 +108,10 @@
           </table>
           <div class="form-input--submit">
               <button class="form-input__submit" type="submit">送信</button>
-              <a class="form-input__link-modify" href="#" onclick="event.preventDefault(); history.back();">修正</a>
+              <button class="form-input__link-modify"  name="modify" type="submit">修正</button>
+              <!-- <a class="form-input__link-modify" href="#" onclick="event.preventDefault(); history.back();">修正</a> -->
           </div>
         </form>
-        <!-- <div class="form-input__link">
-          <a class="form-input__link-modify" href="/">修正</a>
-        </div> -->
       </div>
     </main>
   </div>

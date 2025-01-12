@@ -60,6 +60,4 @@ class Contact extends Model
             $query->whereDate('updated_at', $param);
         }
     }
-
-
 }

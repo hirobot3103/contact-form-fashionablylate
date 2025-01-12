@@ -18,16 +18,38 @@ class ContactController extends Controller
 
     public function confirm(ContactRequest $request)
     {
-        $contact = $request->only(['first_name', 'last_name','gender','email', 'tel1','tel2','tel3', 'address','building','category','detail']);
+        $contact = $request->only([
+            'first_name', 
+            'last_name',
+            'gender',
+            'email',
+            'tel1',
+            'tel2',
+            'tel3',
+            'address',
+            'building',
+            'category',
+            'detail'
+        ]);
         $category = Category::find($contact['category']);
-        // dd($contact);
-        // dd($category);
         return view('confirm', compact('contact','category'));
     }
 
     public function store(ContactRequest $request)
     {
-        $contact = $request->only(['first_name', 'last_name','gender','email', 'tel1','tel2','tel3', 'address','building','category','detail']);
+        $contact = $request->only([
+            'first_name', 
+            'last_name',
+            'gender',
+            'email', 
+            'tel1',
+            'tel2',
+            'tel3', 
+            'address',
+            'building',
+            'category',
+            'detail'
+        ]);
         $param = [
             'category_id' => $contact['category'],
             'first_name' => $contact['first_name'],
@@ -40,7 +62,6 @@ class ContactController extends Controller
             'detail' => $contact['detail'],
         ];
         Contact::create($param);
-        //return view('thanks');
         return redirect('/thanks');
     }
 
@@ -48,5 +69,4 @@ class ContactController extends Controller
     {
         return view('thanks');
     }
-
 }

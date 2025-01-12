@@ -13,7 +13,6 @@
         <span>FashionablyLate</span>
       </div>
       <div class="page-header__btn">
-        <!-- loginボタン等の配置位置 -->
         <a class="page-header__btn-link" href="/admin">管理画面</a>
       </div>
     </header>
@@ -36,7 +35,6 @@
             </div>
           </div>
 @error('last_name')
-          <!-- バリデーションエラー表示位置 -->
           <div class="form-input__varidation">{{ $message }}</div>  
 @enderror
 @error('first_name')
